@@ -1,0 +1,10 @@
+body
+{font-family: serif;
+ background-color: black;
+ font-color: white;}
+
+input[type="submit"]
+{color: yellow;
+ font: bold;
+ border: 1px solid;
+ border-color: white;}

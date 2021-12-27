@@ -1,0 +1,59 @@
+<html>
+<title>Classes</title>
+<style>
+body {
+box-sizing: border-box;
+background: rgb(255,255,255);
+font-family: sans-serif;
+color: black;
+}
+
+table{
+    border-collapse: collapse;
+    width: 80%;
+
+}
+
+tr{
+    text-align: center;
+}
+
+tr:nth-child(3n+1)
+{
+    border-bottom: 1px solid gray;
+}
+
+th{
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+a{
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    font: bold;
+    border: 3px solid black;
+}
+
+</style>
+<body style="background: linear-gradient(128deg, rgba(255,255,255,1) 0%, rgba(189,172,172,1) 100%, rgba(179,153,1,1) 100%)">
+
+<h1>{{full_name['name']}}'s Students' Grades by Class</h1>
+
+<a href="/">Logout</a>
+
+<table>
+    <tr>
+        <th>Class</th>
+        <th>Grade</th>
+    </tr>
+{% for grade_dict in grade %}
+    <tr>
+        <td>{{grade_dict['c_name']}}</td>
+        <td>{{grade_dict['grade']}}</td>
+    </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>

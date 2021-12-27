@@ -1,0 +1,101 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  box-sizing: border-box;
+  background: rgb(255,255,255);
+  font-family: sans-serif;
+  color: black;
+}
+
+table{
+    border-collapse: collapse;
+    width: 80%;
+
+}
+
+tr{
+    text-align: center;
+}
+
+tr:nth-child(3n+1)
+{
+    border-bottom: 1px solid gray;
+}
+
+th{
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+a{
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    font: bold;
+    border: 3px solid black;
+}
+
+.menu {
+  float: left;
+  width: 20%;
+}
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #f1f1f1;
+}
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.right {
+  background-color: lightblue;
+  float: left;
+  width: 20%;
+  padding: 10px 15px;
+  margin-top: 7px;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<title>Classes</title>
+<body style="background: linear-gradient(128deg, rgba(255,255,255,1) 0%, rgba(189,172,172,1) 100%, rgba(179,153,1,1) 100%)">
+
+<h1>{{full_name['name']}}'s Classes and Current Grades</h1>
+
+<a href="/">Logout</a>
+
+<table>
+    <tr>
+        <th>Class</th>
+        <th>Grade</th>
+    </tr>
+{% for grade_dict in grade %}
+    <tr>
+        <td>{{grade_dict['c_name']}}</td>
+        <td>{{grade_dict['grade']}}</td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>
